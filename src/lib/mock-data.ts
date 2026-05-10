@@ -1,0 +1,497 @@
+import type {
+  MenuItem,
+  GalleryImage,
+  Testimonial,
+  EventSpace,
+  FAQItem,
+  ChefProfile,
+  RestaurantInfo,
+  StaticMenuCategory,
+} from "@/types";
+
+export const restaurantInfo: RestaurantInfo = {
+  name: "Saffron & Sage",
+  tagline: "A Culinary Journey Awaits",
+  description:
+    "Nestled in the heart of Koramangala, Saffron & Sage is a celebration of India's rich culinary heritage reimagined through a contemporary lens. Our kitchen draws from the royal kitchens of Lucknow, the coastal spice routes of Kerala, and the tandoor traditions of the North — weaving together flavors that honor tradition while embracing innovation.",
+  cuisine: "Modern Indian Fine Dining",
+  heritage:
+    "Founded by Chef Arjun Malhotra in 2005, Saffron & Sage began as a 20-seat bistro serving his grandmother's recipes with a modern twist. Two decades later, we've grown into a destination restaurant while staying true to our roots: every dish tells a story, every ingredient is sourced with intention, and every meal is an experience worth remembering.",
+  stats: [
+    { label: "Established", value: "Est. 2005" },
+    { label: "Recognition", value: "Award-Winning Chef" },
+    { label: "Philosophy", value: "Farm-to-Table" },
+    { label: "Featured In", value: "Conde Nast Traveller" },
+  ],
+  address: "42, 12th Cross Road, Koramangala 4th Block, Bangalore 560034",
+  phone: "+91 80 4567 8900",
+  email: "hello@saffronandsage.in",
+  hours: {
+    lunch: "12:00 PM - 3:30 PM",
+    dinner: "7:00 PM - 11:30 PM",
+  },
+  socials: {
+    instagram: "https://instagram.com/saffronandsage",
+    zomato: "https://zomato.com/saffronandsage",
+    google: "https://g.page/saffronandsage",
+  },
+};
+
+export const chef: ChefProfile = {
+  name: "Chef Arjun Malhotra",
+  title: "Executive Chef & Founder",
+  image: "https://picsum.photos/id/64/600/750",
+  bio: "With over 25 years of culinary experience spanning three continents, Chef Arjun Malhotra has redefined what modern Indian cuisine can be. Trained at Le Cordon Bleu Paris and mentored under the legendary Chef Sanjeev Kapoor, Arjun brings a rare blend of classical French technique and deep Indian culinary intuition to every plate.",
+  journey:
+    "After stints at Michelin-starred kitchens in London and Singapore, Arjun returned to Bangalore in 2005 with a mission: to elevate Indian comfort food to fine-dining standards without losing its soul. His signature style — bold spice profiles balanced with unexpected textures — has earned him a devoted following among food critics and everyday diners alike.",
+  awards: [
+    "Times Food Award - Best Fine Dining (2023, 2024)",
+    "Conde Nast Traveller - Top 50 Restaurants in India",
+    "IIHM Chef of the Year 2022",
+    "Zomato Gold - Legendary Status",
+  ],
+  quote:
+    "Food is memory on a plate. Every dish I create is a conversation between where I come from and where Indian cuisine is headed.",
+};
+
+export const menuItems: MenuItem[] = [
+  // Starters & Appetizers
+  {
+    id: "s1",
+    name: "Truffle Mushroom Galouti",
+    description:
+      "Melt-in-your-mouth kebabs made with wild mushrooms, black truffle oil, and a secret blend of 36 Awadhi spices. Served on ulte tawa ka paratha.",
+    image: "https://picsum.photos/id/75/500/400",
+    price: 650,
+    dietaryTag: "veg",
+    allergens: ["gluten"],
+    prepTime: 20,
+    isAvailable: true,
+    isBestseller: false,
+    isNew: false,
+    isChefSpecial: true,
+    rating: 4.8,
+    reviewCount: 142,
+    tags: ["Chef's Special", "Vegetarian"],
+    category: "starters",
+  },
+  {
+    id: "s2",
+    name: "Kerala Prawn Tempura",
+    description:
+      "Tiger prawns in a crispy rice-flour batter, served with coconut-curry leaf aioli and raw mango salsa.",
+    image: "https://picsum.photos/id/42/500/400",
+    price: 850,
+    dietaryTag: "non-veg",
+    allergens: ["shellfish", "gluten"],
+    prepTime: 15,
+    isAvailable: true,
+    isBestseller: true,
+    isNew: false,
+    isChefSpecial: false,
+    rating: 4.9,
+    reviewCount: 238,
+    tags: ["Bestseller", "Seafood"],
+    category: "starters",
+  },
+  {
+    id: "s3",
+    name: "Beetroot Tikki Chaat",
+    description:
+      "Crispy beetroot and sweet potato patties topped with date-tamarind chutney, pomegranate, and sev.",
+    image: "https://picsum.photos/id/48/500/400",
+    price: 450,
+    dietaryTag: "vegan",
+    allergens: [],
+    prepTime: 12,
+    isAvailable: true,
+    isBestseller: false,
+    isNew: true,
+    isChefSpecial: false,
+    rating: 4.6,
+    reviewCount: 67,
+    tags: ["Vegan", "New"],
+    category: "starters",
+  },
+  // Mains / Entrees
+  {
+    id: "m1",
+    name: "Slow-Cooked Rogan Josh",
+    description:
+      "48-hour braised lamb shank in a rich Kashmiri chili and yoghurt gravy, finished with saffron and fennel pollen.",
+    image: "https://picsum.photos/id/30/500/400",
+    price: 1200,
+    dietaryTag: "non-veg",
+    allergens: ["dairy"],
+    prepTime: 35,
+    isAvailable: true,
+    isBestseller: false,
+    isNew: false,
+    isChefSpecial: true,
+    rating: 4.9,
+    reviewCount: 312,
+    tags: ["Signature", "Slow-Cooked"],
+    category: "mains",
+  },
+  {
+    id: "m2",
+    name: "Paneer Lababdar",
+    description:
+      "House-made paneer in a velvety tomato-cashew gravy with kasoori methi and a touch of cream. A vegetarian showstopper.",
+    image: "https://picsum.photos/id/92/500/400",
+    price: 750,
+    dietaryTag: "veg",
+    allergens: ["dairy", "nuts"],
+    prepTime: 25,
+    isAvailable: true,
+    isBestseller: true,
+    isNew: false,
+    isChefSpecial: false,
+    rating: 4.7,
+    reviewCount: 198,
+    tags: ["Vegetarian", "Bestseller"],
+    category: "mains",
+  },
+  {
+    id: "m3",
+    name: "Coastal Fish Moilee",
+    description:
+      "Fresh catch of the day simmered in a delicate coconut milk curry with green chilies, curry leaves, and raw mango.",
+    image: "https://picsum.photos/id/13/500/400",
+    price: 950,
+    dietaryTag: "non-veg",
+    allergens: [],
+    prepTime: 20,
+    isAvailable: true,
+    isBestseller: false,
+    isNew: false,
+    isChefSpecial: false,
+    rating: 4.6,
+    reviewCount: 89,
+    tags: ["Gluten-Free", "Coastal"],
+    category: "mains",
+  },
+  // Biryanis & Rice
+  {
+    id: "b1",
+    name: "Lucknowi Gosht Biryani",
+    description:
+      "Dum-cooked with aged basmati, hand-pounded spices, saffron milk, and fall-off-the-bone lamb. Sealed with artisanal wheat dough.",
+    image: "https://picsum.photos/id/83/500/400",
+    price: 1100,
+    dietaryTag: "non-veg",
+    allergens: ["gluten", "dairy"],
+    prepTime: 45,
+    isAvailable: true,
+    isBestseller: true,
+    isNew: false,
+    isChefSpecial: true,
+    rating: 4.9,
+    reviewCount: 456,
+    tags: ["Signature", "Must-Try"],
+    category: "biryanis",
+  },
+  {
+    id: "b2",
+    name: "Wild Mushroom Pulao",
+    description:
+      "Fragrant basmati rice layered with seasonal wild mushrooms, caramelized onions, and toasted pine nuts.",
+    image: "https://picsum.photos/id/56/500/400",
+    price: 700,
+    dietaryTag: "veg",
+    allergens: ["nuts"],
+    prepTime: 30,
+    isAvailable: true,
+    isBestseller: false,
+    isNew: false,
+    isChefSpecial: false,
+    rating: 4.5,
+    reviewCount: 73,
+    tags: ["Vegetarian", "Seasonal"],
+    category: "biryanis",
+  },
+  // Breads & Tandoor
+  {
+    id: "t1",
+    name: "Truffle Naan",
+    description:
+      "Wood-fired naan brushed with truffle butter and finished with Himalayan pink salt and micro-herbs.",
+    image: "https://picsum.photos/id/70/500/400",
+    price: 350,
+    dietaryTag: "veg",
+    allergens: ["gluten", "dairy"],
+    prepTime: 8,
+    isAvailable: true,
+    isBestseller: false,
+    isNew: true,
+    isChefSpecial: false,
+    rating: 4.7,
+    reviewCount: 112,
+    tags: ["New", "Vegetarian"],
+    category: "breads",
+  },
+  {
+    id: "t2",
+    name: "Tandoori Chicken",
+    description:
+      "Free-range chicken marinated for 24 hours in yoghurt, Kashmiri mirch, and our secret tandoor masala. Charred to smoky perfection.",
+    image: "https://picsum.photos/id/21/500/400",
+    price: 750,
+    dietaryTag: "non-veg",
+    allergens: ["dairy"],
+    prepTime: 25,
+    isAvailable: true,
+    isBestseller: true,
+    isNew: false,
+    isChefSpecial: false,
+    rating: 4.8,
+    reviewCount: 367,
+    tags: ["Signature", "Bestseller"],
+    category: "breads",
+  },
+  // Desserts
+  {
+    id: "d1",
+    name: "Gulab Jamun Cheesecake",
+    description:
+      "New York-style cheesecake infused with cardamom and rose, topped with deconstructed gulab jamun and pistachio crumble.",
+    image: "https://picsum.photos/id/63/500/400",
+    price: 550,
+    dietaryTag: "veg",
+    allergens: ["gluten", "dairy", "nuts"],
+    prepTime: 10,
+    isAvailable: true,
+    isBestseller: true,
+    isNew: false,
+    isChefSpecial: true,
+    rating: 4.9,
+    reviewCount: 289,
+    tags: ["Chef's Special", "Fusion"],
+    category: "desserts",
+  },
+  {
+    id: "d2",
+    name: "Saffron Phirni Brulee",
+    description:
+      "Creamy rice pudding set with Kashmiri saffron and torched tableside. Served in traditional clay matkas.",
+    image: "https://picsum.photos/id/99/500/400",
+    price: 450,
+    dietaryTag: "veg",
+    allergens: ["dairy"],
+    prepTime: 12,
+    isAvailable: true,
+    isBestseller: false,
+    isNew: false,
+    isChefSpecial: false,
+    rating: 4.7,
+    reviewCount: 134,
+    tags: ["Signature", "Traditional"],
+    category: "desserts",
+  },
+  // Beverages & Mocktails
+  {
+    id: "bv1",
+    name: "Rose & Lychee Cooler",
+    description:
+      "Chilled rose water, lychee puree, fresh mint, and a hint of black salt. Refreshingly floral and subtly sweet.",
+    image: "https://picsum.photos/id/82/500/400",
+    price: 350,
+    dietaryTag: "vegan",
+    allergens: [],
+    prepTime: 5,
+    isAvailable: true,
+    isBestseller: false,
+    isNew: false,
+    isChefSpecial: false,
+    rating: 4.6,
+    reviewCount: 98,
+    tags: ["Refreshing", "Alcohol-Free"],
+    category: "beverages",
+  },
+  {
+    id: "bv2",
+    name: "Masala Chai Old Fashioned",
+    description:
+      "A non-alcoholic twist on the classic — house-brewed masala chai syrup, bitters, smoked cinnamon, and sparkling water.",
+    image: "https://picsum.photos/id/60/500/400",
+    price: 400,
+    dietaryTag: "vegan",
+    allergens: [],
+    prepTime: 7,
+    isAvailable: true,
+    isBestseller: false,
+    isNew: true,
+    isChefSpecial: false,
+    rating: 4.5,
+    reviewCount: 54,
+    tags: ["Mocktail", "New"],
+    category: "beverages",
+  },
+];
+
+export const galleryImages: GalleryImage[] = [
+  // Food
+  { id: "g1", src: "https://picsum.photos/id/75/800/600", alt: "Signature plated dish with edible flowers", category: "food", width: 800, height: 600 },
+  { id: "g2", src: "https://picsum.photos/id/42/600/800", alt: "Colorful thali spread", category: "food", width: 600, height: 800 },
+  { id: "g3", src: "https://picsum.photos/id/48/800/500", alt: "Sizzling tandoori platter", category: "food", width: 800, height: 500 },
+  { id: "g4", src: "https://picsum.photos/id/63/600/750", alt: "Dessert presentation with gold leaf", category: "food", width: 600, height: 750 },
+  { id: "g5", src: "https://picsum.photos/id/30/800/600", alt: "Fresh salad with microgreens", category: "food", width: 800, height: 600 },
+  { id: "g6", src: "https://picsum.photos/id/70/700/700", alt: "Artisanal bread basket from tandoor", category: "food", width: 700, height: 700 },
+  // Ambiance
+  { id: "g7", src: "https://picsum.photos/id/65/800/500", alt: "Warm candlelit dining room", category: "ambiance", width: 800, height: 500 },
+  { id: "g8", src: "https://picsum.photos/id/36/600/800", alt: "Rooftop terrace with fairy lights", category: "ambiance", width: 600, height: 800 },
+  { id: "g9", src: "https://picsum.photos/id/28/800/600", alt: "Elegant bar area", category: "ambiance", width: 800, height: 600 },
+  { id: "g10", src: "https://picsum.photos/id/84/700/700", alt: "Private dining alcove", category: "ambiance", width: 700, height: 700 },
+  { id: "g11", src: "https://picsum.photos/id/57/800/500", alt: "Grand entrance with brass fixtures", category: "ambiance", width: 800, height: 500 },
+  // Events
+  { id: "g12", src: "https://picsum.photos/id/53/800/600", alt: "Birthday celebration setup", category: "events", width: 800, height: 600 },
+  { id: "g13", src: "https://picsum.photos/id/59/600/800", alt: "Corporate dinner event", category: "events", width: 600, height: 800 },
+  { id: "g14", src: "https://picsum.photos/id/76/800/500", alt: "Wedding reception dinner", category: "events", width: 800, height: 500 },
+  { id: "g15", src: "https://picsum.photos/id/34/700/700", alt: "Wine tasting evening", category: "events", width: 700, height: 700 },
+  // Kitchen
+  { id: "g16", src: "https://picsum.photos/id/27/800/600", alt: "Chef plating a dish", category: "kitchen", width: 800, height: 600 },
+  { id: "g17", src: "https://picsum.photos/id/43/600/800", alt: "Tandoor oven in action", category: "kitchen", width: 600, height: 800 },
+  { id: "g18", src: "https://picsum.photos/id/29/800/500", alt: "Fresh ingredients on prep station", category: "kitchen", width: 800, height: 500 },
+  { id: "g19", src: "https://picsum.photos/id/23/700/700", alt: "Kitchen brigade at work", category: "kitchen", width: 700, height: 700 },
+];
+
+export const testimonials: Testimonial[] = [
+  {
+    id: "t1",
+    name: "Priya Sharma",
+    avatar: "https://picsum.photos/id/64/100/100",
+    rating: 5,
+    text: "Our anniversary dinner here was nothing short of magical. The Lucknowi Gosht Biryani transported us straight to the royal kitchens of Awadh. The staff remembered our seating preference from our last visit — that kind of attention to detail is rare.",
+    occasion: "Anniversary Dinner",
+    date: "February 2026",
+  },
+  {
+    id: "t2",
+    name: "Rahul Menon",
+    avatar: "https://picsum.photos/id/91/100/100",
+    rating: 5,
+    text: "As someone who hosts client dinners frequently, Saffron & Sage is my go-to. The private dining room is tastefully done, the service is impeccable, and the food never disappoints. The Gulab Jamun Cheesecake alone closes deals.",
+    occasion: "Corporate Dinner",
+    date: "January 2026",
+  },
+  {
+    id: "t3",
+    name: "Ananya Reddy",
+    avatar: "https://picsum.photos/id/65/100/100",
+    rating: 4,
+    text: "Brought the entire family including my in-laws for a Sunday lunch. The kids loved the paneer tikka, my father-in-law couldn't stop raving about the dal makhani, and I finally found my new favorite dessert in the Saffron Phirni. The vegetarian options here are genuinely exciting.",
+    occasion: "Family Sunday Lunch",
+    date: "March 2026",
+  },
+  {
+    id: "t4",
+    name: "Vikram Iyer",
+    avatar: "https://picsum.photos/id/77/100/100",
+    rating: 5,
+    text: "The tasting menu was a seven-course journey through India that I did not expect. Every course told a story — from the amuse-bouche with smoked yoghurt to the final chai brulee. Chef Arjun stopped by our table and his passion is infectious. World-class experience.",
+    occasion: "Date Night",
+    date: "December 2025",
+  },
+  {
+    id: "t5",
+    name: "Meera Kapoor",
+    avatar: "https://picsum.photos/id/22/100/100",
+    rating: 5,
+    text: "I hosted my book club dinner here and everyone was raving about the food for days after. The Rose & Lychee Cooler is addictive, and the Kerala Prawn Tempura might be the best starter I have ever had in Bangalore. Already planning our next visit.",
+    occasion: "Friends' Gathering",
+    date: "November 2025",
+  },
+];
+
+export const eventSpaces: EventSpace[] = [
+  {
+    id: "e1",
+    name: "The Saffron Room",
+    description:
+      "Our signature private dining space, adorned with hand-painted Mughal miniatures and warm ambient lighting. Perfect for intimate celebrations and milestone dinners. Features a dedicated service team and custom menu curation.",
+    capacity: "12-20 guests",
+    image: "https://picsum.photos/id/65/800/500",
+    features: [
+      "Dedicated service staff",
+      "Custom menu planning",
+      "AV equipment for presentations",
+      "Ambient lighting control",
+    ],
+  },
+  {
+    id: "e2",
+    name: "The Terrace Garden",
+    description:
+      "Our rooftop garden space with panoramic views of the Bangalore skyline. Draped in fairy lights and surrounded by potted herbs from our kitchen garden, it transforms into a magical setting for cocktail receptions and standing dinners.",
+    capacity: "40-80 guests",
+    image: "https://picsum.photos/id/76/800/500",
+    features: [
+      "Open-air seating",
+      "Live cooking stations",
+      "DJ and sound system",
+      "Rain backup indoor area",
+    ],
+  },
+  {
+    id: "e3",
+    name: "Chef's Table Experience",
+    description:
+      "An exclusive 8-seat counter facing the open kitchen. Watch Chef Arjun and his team prepare a bespoke multi-course meal right before your eyes. Includes wine pairing and personal interaction with the chef throughout the evening.",
+    capacity: "6-8 guests",
+    image: "https://picsum.photos/id/27/800/500",
+    features: [
+      "Interactive cooking experience",
+      "Bespoke tasting menu",
+      "Wine or mocktail pairing",
+      "Chef's personal narration",
+    ],
+  },
+];
+
+export const faqItems: FAQItem[] = [
+  {
+    id: "f1",
+    question: "Do you take reservations?",
+    answer:
+      "Yes, we highly recommend reservations, especially for dinner service and weekends. You can reach us via phone at +91 80 4567 8900 or send an inquiry through our contact form. Walk-ins are welcome based on availability, but peak hours (7:30-9:30 PM on Fri-Sun) tend to fill up quickly.",
+  },
+  {
+    id: "f2",
+    question: "Is there a dress code?",
+    answer:
+      "We maintain a smart-casual dress code. Collared shirts or smart kurtas for men, and equivalent smart-casual attire for women. We request that guests avoid sportswear, flip-flops, and beachwear. For the Chef's Table experience, we recommend slightly more formal attire.",
+  },
+  {
+    id: "f3",
+    question: "Do you accommodate dietary restrictions?",
+    answer:
+      "Absolutely. Our kitchen is well-equipped to handle vegetarian, vegan, Jain, gluten-free, and nut-free requirements. Please mention any allergies or dietary needs when making your reservation or inform your server upon arrival. Our chef can customize many dishes to suit your needs.",
+  },
+  {
+    id: "f4",
+    question: "Is parking available?",
+    answer:
+      "Yes, we have complimentary valet parking for all guests. We also have a dedicated parking lot with 30 spaces adjacent to the restaurant. For larger events, we arrange additional overflow parking at a nearby lot with shuttle service.",
+  },
+  {
+    id: "f5",
+    question: "Do you offer private dining?",
+    answer:
+      "Yes, we have three distinct private dining options: The Saffron Room (12-20 guests), The Terrace Garden (40-80 guests), and our Chef's Table Experience (6-8 guests). Each comes with custom menu planning and a dedicated service team. Please contact us at least 72 hours in advance for private dining arrangements.",
+  },
+  {
+    id: "f6",
+    question: "Is there a kids' menu?",
+    answer:
+      "While we do not have a separate printed kids' menu, our kitchen is happy to prepare kid-friendly versions of many dishes with milder spice levels, smaller portions, and familiar favorites. High chairs and booster seats are available. We also have a small play corner near the garden area for younger guests.",
+  },
+];
+
+export const menuCategories: StaticMenuCategory[] = [
+  { id: "starters", label: "Starters & Appetizers", description: "Begin your journey with bold, inventive bites" },
+  { id: "mains", label: "Mains / Entrees", description: "Hearty, soul-satisfying centerpieces" },
+  { id: "biryanis", label: "Biryanis & Rice", description: "Fragrant, slow-cooked perfection in every grain" },
+  { id: "breads", label: "Breads & Tandoor", description: "Fresh from our wood-fired clay oven" },
+  { id: "desserts", label: "Desserts", description: "Sweet endings with an Indian twist" },
+  { id: "beverages", label: "Beverages & Mocktails", description: "Handcrafted drinks to complement your meal" },
+];
